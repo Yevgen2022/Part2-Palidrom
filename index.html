@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<pre>
+    Створіть функцію, яка визначатиме, чи є введений користувачем рядок паліндромом.
+    Паліндром – число, буквосполучення, слово або текст, яке читається однаково зліва
+    направо та справа наліво. Наприклад, 707, Пилип, око, мадам тощо.
+</pre>
+
+<body>
+    <script>
+        let mainStr = prompt("Введіть слово для перевірки,чи є воно полідромним");;
+
+        function isStringPalindrome(str) {
+            // Remove all symbols except letters
+            // str = str.toLowerCase().replace(/[^a-zа-яё]/g, '');
+
+            str = str.toLowerCase();
+
+            // Turn the line over
+            let reversedStr = str.split('').reverse().join('');
+
+            // We check whether the string matches its inverted version and return the result
+            return (str === reversedStr) ? alert(`Слово ${mainStr} є полідромом`) : alert(`Слово ${mainStr} не є полідромом`);
+        }
+
+        console.log(isStringPalindrome(mainStr));
+    </script>
+</body>
+
+</html>
